@@ -1,0 +1,16 @@
+site_name: Sofá com série
+site_url: https://sofacomserie.github.io
+
+home:
+  title: Página Inicial
+  description: Em Português
+
+menu:
+  social:
+    instagram:
+      url: https://www.instagram.com/sofacomserie
+      svg: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><use href="#instagram" /></svg>
+
+# Miscellaneous
+google_analytics: XXXXX
+favicon: /favicon.png

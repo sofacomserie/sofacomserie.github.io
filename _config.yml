@@ -1,0 +1,73 @@
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Sofá com série
+author: Sofá com série
+language: pt-br
+timezone: UTC
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://sofacomserie.github.io
+root: /
+permalink: :category/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+code_dir: downloads/code
+i18n_dir: pt-br
+skip_render:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: DD.MM.YYYY
+date_article_format: DD . MMMM . YYYY
+time_format: HH:mm:ss
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: sofacomserie
+
+plugins:
+  - "@hdquarters/hexo-resources"
+  - hexo-deployer-git
+  - hexo-server
+
+descco_pipeline:
+  revisioning:
+    enable: false
+  imagemin:
+    enable: true
+  html_minifier:
+    enable: true
+    removeComments: true
+    collapseWhitespace: true
+    minifyJS: true
+    exclude:
+  node_sass:
+    outputStyle: compressed
+  marked:
+    gfm: true
+    pedantic: false
+    sanitize: false
+    tables: true
+    breaks: false
+    smartLists: true
+    smartypants: true
+  webpack:
+    entry: "themes/sofacomserie/source/assets/js/site/scripts.js"
+
+deploy:
+  type: git
+  repo: git@github.com:sofacomserie/sofacomserie.github.io.git
+  branch: gh-pages
+
+server:
+  port: 5000

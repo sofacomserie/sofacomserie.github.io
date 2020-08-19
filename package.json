@@ -1,0 +1,38 @@
+{
+  "name": "sofacomserie.github.io",
+  "version": "0.0.0",
+  "hexo": {
+    "version": "4.2.1"
+  },
+  "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (https://nerdcalistenico.com.br)",
+  "license": "MIT",
+  "scripts": {
+    "server": "hexo serve",
+    "generate": "hexo generate",
+    "watch": "run-p watch:*",
+    "watch:generate": "hexo generate -w",
+    "watch:server": "hexo serve -s",
+    "deploy": "hexo deploy",
+    "production": "NODE_ENV=production hexo server",
+    "development": "NODE_ENV=development hexo server",
+    "release": "./node_modules/.bin/release-it --no-npm.publish --git.tagName='v${version}' --github.release"
+  },
+  "dependencies": {
+    "@babel/cli": "7.10.5",
+    "@babel/core": "7.10.5",
+    "@babel/preset-env": "7.10.4",
+    "@hdquarters/hexo-resources": "2.0.0",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.1.0",
+    "babel-plugin-transform-inline-environment-variables": "0.4.3",
+    "babel-preset-minify": "0.5.1",
+    "copyfiles": "2.3.0",
+    "es6-promise": "4.2.8",
+    "eslint": "7.4.0",
+    "eslint-plugin-babel": "5.3.1",
+    "hexo": "4.2.1",
+    "hexo-deployer-git": "2.1.0",
+    "hexo-server": "1.0.0",
+    "release-it": "13.6.5"
+  }
+}

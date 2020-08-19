@@ -1,0 +1,106 @@
+<%
+  const title = is_home() ? theme.home.title+" | "+config.title : page.title+" | "+config.title;
+  const description = is_home() ? theme.home.description : page.description;
+  const image = `${theme.site_url}/assets/img/site/global/share.jpg`;
+%>
+<head>
+  <!-- IOS Splash screen -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Nerd Calistênico" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="apple-touch-startup-image" media="screen" href="/icon-512x512.png" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="utf-8">
+  <title><%- title %></title>
+  <%
+    const list = ['pt-br', 'en-us']
+    const paths = ['', 'en/']
+    const current = list.indexOf(page.lang)
+    list.map((item, index) => { %>
+    <link rel="alternate" hreflang="<%= item === page.lang ? 'x-default' : item %>" href="<%- theme.theme_url %>/<%= path.replace(paths[current], paths[index]).replace('/index.html', '') %>" />
+  <% }) %>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#343544">
+
+  <link rel="preconnect" href="//cdn.ampproject.org">
+  <link rel="preconnect" href="//stats.g.doubleclick.net">
+  <link rel="preconnect" href="//www.google-analytics.com">
+  <link rel="preconnect" href="//pagead2.googlesyndication.com">
+  <link rel="preconnect" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="//instagram.com">
+  <link rel="preconnect" href="//www.instagram.com">
+  <link rel="preconnect" href="//connect.facebook.net">
+
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="dns-prefetch" href="//cdn.ampproject.org">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//ssl.google-analytics.com">
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+  <link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+  <link rel="dns-prefetch" href="//www.gstatic.com">
+  <link rel="dns-prefetch" href="//instagram.com">
+  <link rel="dns-prefetch" href="//www.instagram.com">
+  <link rel="dns-prefetch" href="//connect.facebook.net">
+
+  <meta name="distribution" content="global">
+  <meta name="revisit-after" content="1 days">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="always">
+  <meta name="description" content="<%- description %>">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- facebook -->
+  <meta property="og:site_name" content="<%- theme.site_name %>">
+  <meta property="og:title" content="<%- title %>">
+  <meta property="og:type"  content="website">
+  <meta property="og:url" content="<%- url.replace('index.html', '') %>">
+  <meta property="og:description" content="<%- description %>">
+  <meta property="og:image" content="<%- image %>">
+  <meta property="fb:app_id" content="">
+
+  <!-- twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="<%- title %>">
+  <meta property="twitter:description" content="<%- description %>">
+  <meta property="twitter:image" content="<%- image %>">
+
+  <!-- component schema.org -->
+  <meta name="title" content="<%- title %>">
+  <meta name="description" content="<%- description %>">
+  <meta itemprop="inLanguage" content="<%- page.lang.replace('br', 'BR') %>">
+  <meta itemprop="description" content="<%- description %>">
+  <meta itemprop="image" content="<%- image %>">
+  <meta itemprop="url" content="<%- url.replace('index.html', '') %>">
+
+  <link rel="image_src" href="<%- image %>">
+
+  <meta name="geo.country" content="BR">
+  <meta name="geo.region" content="RJ">
+  <meta name="geo.placename" content="Rio de Janeiro">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" href="<%- theme.theme_url %>/assets/img/site/global/apple-touch-icon.png">
+  <link rel="shortcut icon" href="<%- theme.theme_url %>/assets/img/site/global/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="<%- theme.theme_url %>/assets/img/site/global/favicon.ico" type="image/x-icon">
+
+  <!-- canonical -->
+  <% if (is_home()){ %>
+  <link rel="canonical" href="<%- theme.theme_url %>">
+  <% } else { %>
+  <link rel="canonical" href="<%- url.replace('index.html', '') %>">
+  <% } %>
+
+  <link rel="stylesheet" href="/assets/scss/site/style.css?v=1.0">
+  <%- partial('_partial/head/google-analytics.ejs') %>
+</head>

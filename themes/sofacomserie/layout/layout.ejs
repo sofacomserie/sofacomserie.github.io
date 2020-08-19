@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js" lang="<%= page.lang %>" itemscope itemtype="http://schema.org/WebPage">
+  <%- partial('_partial/head/structure') %>
+  <body class="page-<%- is_home() ? 'home' : is_post() ? 'article' : page.name %>">
+    <%- partial('_partial/body/google-analytics') %>
+    <%- partial('_partial/svg/social') %>
+    <div class="wrapper">
+      <%- partial('_partial/body/header') %>
+      <div class="content">
+        <div class="container">
+          <%
+            var paths = page.path.split('/').filter(item => item !== 'en');
+            var path = '';
+          %>
+          <% if (!is_home() && page.name !== 'home'){ %>
+          <div class="breadcrumb">
+            <ul class="breadcrumb-list" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+              <li class="breadcrumb-item" itemscope="itemscope" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                <a class="breadcrumb-link" itemprop="item" href="/"><span itemprop="name">JD</span></a>
+                <meta itemprop="position" content="1" />
+                <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="141.887 206 100 100"><path d="M173.48 206h-26.563l31.314 50-31.313 50h26.562l31.314-50"/><path d="M206.572 206H180.01l31.313 50-31.313 50h26.56l31.317-50"/></svg>
+              </li>
+              <% for(var i = 0; i < paths.length-1; i++) { %>
+                <% if(i === paths.length-2) { %>
+                  <li class="breadcrumb-item"><%= paths[i].replace(/-/g, ' ') %></li>
+                <% } else { %>
+                  <% path = path+'/'+paths[i] %>
+                  <li class="breadcrumb-item">
+                    <a class="breadcrumb-link" href="<%= path %>"><%= paths[i].replace(/-/g, ' ') %></a>
+                    <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="141.887 206 100 100"><path d="M173.48 206h-26.563l31.314 50-31.313 50h26.562l31.314-50"/><path d="M206.572 206H180.01l31.313 50-31.313 50h26.56l31.317-50"/></svg>
+                  </li>
+                <% } %>
+              <% } %>
+            </ul>
+          </div>
+          <% } %>
+          <div class="body">
+            <%- body %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- partial('_partial/body/service-worker') %>
+    <%- partial('_partial/body/scripts') %>
+  </body>
+</html>

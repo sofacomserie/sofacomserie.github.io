@@ -1,6 +1,5 @@
 # sofacomserie.github.io
 
-[![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
 [![GitHub issues](https://img.shields.io/github/issues/sofacomserie/sofacomserie.github.io.svg)](https://github.com/sofacomserie/sofacomserie.github.io/issues)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/sofacomserie/sofacomserie.github.io.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/sofacomserie/sofacomserie.github.io.svg)
