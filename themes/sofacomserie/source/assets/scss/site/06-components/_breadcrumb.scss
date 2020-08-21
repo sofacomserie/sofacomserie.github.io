@@ -1,0 +1,22 @@
+/* ==========================================================================
+  Variables
+========================================================================== */
+
+/* Breadcrumb
+========================================================================== */
+.breadcrumb {
+  margin-bottom: 10px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.breadcrumb-item {
+  padding-left: 10px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
