@@ -4,14 +4,6 @@
   const image = `${theme.site_url}/assets/img/site/global/share.jpg`;
 %>
 <head>
-  <!-- IOS Splash screen -->
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-touch-fullscreen" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="Nerd Calistênico" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <link rel="apple-touch-startup-image" media="screen" href="/icon-512x512.png" />
-
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta charset="utf-8">
   <title><%- title %></title>
@@ -24,8 +16,7 @@
   <% }) %>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#343544">
-
+  
   <link rel="preconnect" href="//cdn.ampproject.org">
   <link rel="preconnect" href="//stats.g.doubleclick.net">
   <link rel="preconnect" href="//www.google-analytics.com">
@@ -36,8 +27,8 @@
   <link rel="preconnect" href="//connect.facebook.net">
 
   <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="dns-prefetch" href="//cdn.ampproject.org">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
@@ -57,8 +48,6 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="referrer" content="always">
   <meta name="description" content="<%- description %>">
-
-  <link rel="manifest" href="/manifest.json">
 
   <!-- facebook -->
   <meta property="og:site_name" content="<%- theme.site_name %>">
@@ -89,10 +78,36 @@
   <meta name="geo.region" content="RJ">
   <meta name="geo.placename" content="Rio de Janeiro">
 
+  <!-- IOS Splash screen -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Julia Delorenzi" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="apple-touch-startup-image" media="screen" href="/assets/img/site/global/android-icon-192x192.png" />
+
   <!-- favicon -->
-  <link rel="apple-touch-icon" href="<%- theme.theme_url %>/assets/img/site/global/apple-touch-icon.png">
-  <link rel="shortcut icon" href="<%- theme.theme_url %>/assets/img/site/global/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="<%- theme.theme_url %>/assets/img/site/global/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/site/global/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/site/global/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/site/global/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/site/global/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/site/global/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/site/global/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/site/global/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/site/global/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/site/global/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/site/global/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/site/global/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/site/global/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/site/global/favicon-16x16.png">
+  <link rel="shortcut icon" href="/assets/img/site/global/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/img/site/global/favicon.ico" type="image/x-icon">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- canonical -->
   <% if (is_home()){ %>

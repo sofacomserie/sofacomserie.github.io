@@ -1,0 +1,97 @@
+<script type='text/javascript'>
+var installingWorker,isLocalhost=Boolean("localhost"===window.location.hostname||"[::1]"===window.location.hostname||window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));function register(){if("serviceWorker"in navigator){if(new URL("https://sofacomserie.github.io",window.location).origin!==window.location.origin)return;window.addEventListener("load",()=>{isLocalhost?(checkValidServiceWorker("/sw.js"),navigator.serviceWorker.ready.then(()=>{console.log("This web app is being served cache-first by a service")})):registerValidSW("/sw.js")})}}function showUpdateBar(){var e=document.getElementById("snackbar");e.classList.add("show"),document.getElementById("reload").addEventListener("click",function(n){n.preventDefault(),e.className="",installingWorker.postMessage({action:"skipWaiting"}),window.location.reload()})}function registerValidSW(e){navigator.serviceWorker.register(e).then(e=>{console.log("Service Worker Registered"),e.active&&e.addEventListener("updatefound",()=>{console.log("Update found. Waiting for install to complete.");const n=e.installing;n.addEventListener("statechange",()=>{if("installed"===n.state)return console.log("Install complete. Triggering update prompt."),void showUpdateBar()})})}).catch(e=>{console.error("Error during service worker registration:",e)})}function checkValidServiceWorker(e){fetch(e).then(n=>{404===n.status||-1===n.headers.get("content-type").indexOf("javascript")?navigator.serviceWorker.ready.then(e=>{e.unregister().then(()=>{window.location.reload()})}):registerValidSW(e)}).catch(()=>{console.log("No internet connection found. App is running in offline mode.")})}function unregister(){"serviceWorker"in navigator&&navigator.serviceWorker.ready.then(e=>{e.unregister()})}register();
+</script>
+
+<!--<script>
+var installingWorker;
+var isLocalhost = Boolean(
+  window.location.hostname === 'localhost' || window.location.hostname === '[::1]' || window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
+);
+
+function register() {
+  if ('serviceWorker' in navigator) {
+    var publicUrl = new URL('https://sofacomserie.github.io', window.location);
+    if (publicUrl.origin !== window.location.origin) { return; }
+
+    window.addEventListener('load', () => {
+      var swUrl = `/sw.js`;
+
+      if (isLocalhost) {
+        checkValidServiceWorker(swUrl);
+        navigator.serviceWorker.ready.then(() => { console.log('This web app is being served cache-first by a service'); });
+      } else {
+        registerValidSW(swUrl);
+      }
+    });
+
+    // let refreshing;
+    // navigator.serviceWorker.addEventListener('controllerchange', function () {
+      // if (refreshing) return;
+      // window.location.reload();
+      // refreshing = true;
+    // });
+  }
+}
+
+function showUpdateBar() {
+  var snackbar = document.getElementById('snackbar');
+  snackbar.classList.add('show')
+
+  // The click event on the pop up notification
+  document.getElementById('reload').addEventListener('click', function(event){
+    event.preventDefault();
+
+    snackbar.className = '';
+    installingWorker.postMessage({ action: 'skipWaiting' });
+    window.location.reload();
+  });
+}
+
+function registerValidSW(swUrl) {
+  navigator.serviceWorker
+    .register(swUrl)
+    .then(registration => {
+      console.log("Service Worker Registered");
+      if(registration.active) {
+        registration.addEventListener('updatefound', () => {
+          console.log('Update found. Waiting for install to complete.');
+          const installingWorker = registration.installing;
+          installingWorker.addEventListener('statechange', () => {
+            if(installingWorker.state === 'installed') {
+              console.log('Install complete. Triggering update prompt.');
+              showUpdateBar();
+              return;
+            }
+          });
+        });
+      }
+    })
+    .catch(error => { console.error('Error during service worker registration:', error); });
+}
+
+function checkValidServiceWorker(swUrl) {
+  fetch(swUrl)
+    .then(response => {
+      if (response.status === 404 || response.headers.get('content-type').indexOf('javascript') === -1) {
+        navigator.serviceWorker.ready.then(registration => {
+          registration.unregister().then(() => {
+            window.location.reload();
+          });
+        });
+      } else {
+        registerValidSW(swUrl);
+      }
+    })
+    .catch(() => { console.log('No internet connection found. App is running in offline mode.'); });
+}
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    });
+  }
+}
+
+register();
+</script>-->
