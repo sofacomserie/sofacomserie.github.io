@@ -1,0 +1,13 @@
+<nav class="socialNav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+  <meta itemprop="about" content="Menu social">
+  <ul class="socialNav-list" aria-label="Menu social">
+    <% for (let item in theme.menu.social) { %>
+      <li class="socialNav-item">
+        <a class="socialNav-link" href="<%= theme.menu.social[item].url %>" target="_blank" rel="noreferrer" itemprop="url">
+          <span class="hide" itemprop="name"><%- theme.menu.social[item].title %></span>
+          <%- theme.menu.social[item].svg %>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</nav>

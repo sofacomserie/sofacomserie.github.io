@@ -1,0 +1,20 @@
+// Breakpoints
+///
+$screen-base: 1300px !default;
+//Smartphones (portrait)
+$screen-phone-portrait: 320px !default;
+//Smartphones (landscape)
+$screen-phone-landscape: 480px !default;
+//Small tablet
+$screen-tablet-small: 600px !default;
+//Tablet (portrait)
+$screen-tablet-portrait: 768px !default;
+//Tablet (landscape) / Desktop
+$screen-desktop: 992px !default;
+//Wide
+$screen-wide: 1300px !default;
+$screen-phone-portrait-max: ( $screen-phone-landscape - 1 );
+$screen-phone-landscape-max: ( $screen-tablet-small - 1 );
+$screen-tablet-small-max: ( $screen-tablet-portrait - 1 );
+$screen-tablet-portrait-max: ( $screen-desktop - 1 );
+$screen-desktop-max: ( $screen-wide - 1 );

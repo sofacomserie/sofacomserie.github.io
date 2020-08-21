@@ -1,0 +1,103 @@
+/* ==========================================================================
+  Variables
+========================================================================== */
+
+/* Imports
+========================================================================== */
+@import "../05-objects/navs/_social";
+@import "../05-objects/navs/_main";
+
+@import "../05-objects/logotypes/_site";
+
+/* Header
+========================================================================== */
+.header {
+  background-color: #fff;
+  height: 48px;
+  overflow: hidden;
+  position: fixed;
+  transition: all 0.1s ease-in;
+  text-shadow: none;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+
+  @media (min-width: $screen-desktop) {
+    height: auto;
+    position: static;
+  }
+}
+
+.header-overlay {
+  margin-top: 30px;
+
+  @media (min-width: $screen-desktop) {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap row;
+    margin-top: 0;
+  }
+}
+
+.header-content {
+  margin: 0 -1rem;
+
+  @media (min-width: $screen-desktop) {
+    margin: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap row;
+    justify-content: space-between;
+  }
+}
+
+.mobileButton {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  padding-top: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-desktop) {
+    display: none;
+  }
+}
+
+body {
+  padding-top: 48px;
+
+  @media (min-width: $screen-desktop) {
+    padding-top: 0;
+  }
+}
+
+body.on {
+  .header {
+    transition: all 0.3s ease-out;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header-content {
+    justify-content: flex-start;
+  }
+
+  .socialNav-list,
+  .langNav-list {
+    justify-content: flex-end;
+  }
+
+  .mobileButton,
+  .logotype {
+    z-index: 2;
+  }
+}

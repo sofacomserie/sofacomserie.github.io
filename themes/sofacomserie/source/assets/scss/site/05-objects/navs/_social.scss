@@ -1,0 +1,24 @@
+/* ==========================================================================
+  Variables
+========================================================================== */
+
+/* Social Nav
+========================================================================== */
+.socialNav-list {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap row;
+  justify-content: flex-end;
+
+  @media (min-width: $screen-desktop) {
+    margin-left: 10px;
+  }
+}
+
+.socialNav-item {
+  margin-left: 10px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,41 @@
+/* ==========================================================================
+  Variables
+========================================================================== */
+
+/* Main Nav
+========================================================================== */
+.mainNav {
+  font-size: 1rem;
+  padding: 20px 0 20px;
+
+  @media (min-width: $screen-desktop) {
+    padding: 0;
+  }
+}
+
+.mainNav-list {
+  @media (min-width: $screen-desktop) {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap row;
+  }
+}
+
+.mainNav-item {
+  @media (min-width: $screen-desktop) {
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.mainNav-link {
+  display: block;
+  padding: 10px 0;
+
+  @media (min-width: $screen-desktop) {
+    padding: 0;
+  }
+}
